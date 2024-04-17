@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+struct DateOfBirth
+{
+    int dd;
+    int mm;
+    int yyyy;
+};
+struct Students
+{
+   int rollNo;
+   char name[50];
+   struct DateOfBirth dob;
+};
+int main()
+{
+    int i, n;
+    printf("Enter number of Students: ");
+    scanf("%d",&n);
+    struct Students std[n];
+    for(i=0; i<n ; i++)
+    {
+        printf("Enter Details for Student %d: ",i+1); 
+        printf("\nRoll number: ");
+        scanf("%d",&std[i].rollNo);
+        printf("Name: ");
+        getchar();
+        fgets(std[i].name, 50, stdin);
+         std[i].name[strcspn(std[i].name, "\n")] = '\0';
+        printf("Date Of Birth(DD/MM/YYYY): ");
+        scanf("%d/%d/%d", &std[i].dob.dd,&std[i].dob.mm,&std[i].dob.yyyy);
+        printf("\n");
+    }
+    printf("%-10s%-30s%20s","ROLL NO.","NAME","DATE OF BIRTH\n");
+   for(i=0 ; i<n ; i++)
+   {
+         printf("%-10d%-30s\t%02d/%02d/%04d\n",
+                           std[i].rollNo,
+                             std[i].name,
+                           std[i].dob.dd,
+                           std[i].dob.mm,
+                        std[i].dob.yyyy); 
+   }
+    return 0;
+}
+
+
+
+
