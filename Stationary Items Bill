@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+int main ()
+{
+    int pro,totBill=0;
+     printf("Product: 101\t102\t103\t104\nMenu: Notebook   Pen   Marker  File\nPrice: 100\t20\t25\t40");
+     printf("\nEnter your choice(0 to exit):");
+     do
+     {
+     scanf("%d",&pro);
+     switch(pro)
+     {
+     case 0:
+     break;
+     case 101:
+     totBill+=100;
+     break;
+     case 102:
+     totBill+=20;
+     break;
+     case 103:
+     totBill+=25;
+     break;
+     case 104:
+     totBill+=40;
+     break;
+     }
+     }while(pro!=0);;
+     printf("\nYour Total bill:\t$%d\n",totBill);
+} 
