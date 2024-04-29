@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int num,sum=0;
+    scanf("%d",&num);
+    int ognum=num;
+    do{
+        int digit=num%10;          //num=153 digit=3    num=15 digit=5 
+        sum+=digit*digit*digit;    // sum=3*3*3=27      sums=125+27=152
+        num/=10;                   // 123/10 = 12       num=12/10=1    
+    }while(num!=0);
+    if(sum==ognum)
+    {
+        printf("%d is Armstrong number.",ognum);
+    }
+    else
+    {
+        printf("%d is NOT Armstrong number.",ognum);
+    }
+    return 0;
+}
+
