@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+   int n;
+   printf("Enter size of string: ");
+    scanf("%d",&n);
+    char  ogstr[n+1];
+    scanf("%s",ogstr);
+    printf("String is: %s",ogstr);
+    char revstr[n+1];
+    for( int i=0 ; i<n ; i++)
+    {
+        revstr[n-i-1]=ogstr[i];
+    }
+    revstr[n]='\0';
+    printf("\nReversed String is: %s", revstr);
+    return 0;
+}
