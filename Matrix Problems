@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+int main()
+{
+  //TAKING TWO MATRICES AS INPUT 
+    int m,n;
+    printf("Enter the order of Matrix(m x n): ");
+    scanf("%d %d",&m,&n);
+    int mat1[m][n],mat2[m][n],resultmat[m][n];
+    printf("Enter Elements of Matrix 1:\n");
+    for(int i=1; i<=m; i++)
+    {
+        for(int j=1; j<=n; j++)
+        {
+            scanf("%d",&mat1[i][j]);
+        }
+    }
+    printf("Enter Elements of Matrix 2:\n");
+    for(int i=1; i<=m; i++)
+    {
+        for(int j=1; j<=n; j++)
+        {
+            scanf("%d",&mat2[i][j]);
+        }
+    }
+//PRINTING THE USER-ENTERED MATRIX 
+    printf("\nMatrix 1:\n");
+    for(int i=1; i<=m ; i++)
+    {
+        for(int j=1; j<=n ; j++)
+        {
+            printf("%d ",mat1[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nMatrix 2:\n");
+    for(int i=1; i<=m ; i++)
+    {
+        for(int j=1; j<=n ; j++)
+        {
+            printf("%d ",mat2[i][j]);
+        }
+        printf("\n");
+    }
+   //ADDING BOTH MATRICES AND STORING RESULTANT IN THIRD MATRIX
+    printf("Addition of Matrix 1 & Matrix 2:\nResultant Matrix:\n");
+    resultmat[m][n]=0;
+    for(int i=1; i<=m; i++)
+    {
+        for(int j=1; j<=n; j++)
+        {
+            resultmat[i][j]=mat1[i][j]+mat2[i][j];
+            printf("%d ",resultmat[i][j]);
+        }
+        printf("\n");
+    }
+  //CREATING A NEW MATRIX THAT IS TRANSPOSE OF ANOTHER MATRIX (here MATRIX 1)
+    int transmat1[m][n];
+    printf("Transpose of Matrix 1:\n");
+    for(int i=1; i<=m; i++)
+    {
+        for(int j=1; j<=n; j++)
+        {
+            transmat1[i][j]=mat1[j][i];
+            printf("%d ",transmat1[i][j]);
+        }
+        printf("\n");
+    }
+  //MULTIPLYING BOTH MATRICES AND STORING RESULT IN THIRD MATRIX
+    printf("Multiplication of Matrix1 & Matrix 2:\n");
+    int mulmat[m][n];
+   if(m==n)
+   {
+       for(int i=1; i<=m; i++)
+       {
+            for(int j=1; j<=n; j++)
+            {
+               mulmat[i][j]=0;
+               for(int k=1; k<=m ; k++)
+               {
+                   mulmat [i] [j] += mat1 [i] [k] * mat2 [k] [j] ;  
+// dot product of i-th row of MATRIX 1 & jth COLUMN OF MATRIX 2 where k is the common dimension of mat1 and mat2 which is here = m
+               } 
+               printf("%d ",mulmat[i][j]);
+            }
+            printf("\n");
+        }
+      
+   }
+    return 0;
+}
+
