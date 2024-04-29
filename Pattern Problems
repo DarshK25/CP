@@ -1,0 +1,181 @@
+#include<stdio.h>
+void
+pattern_1 (int n)
+{
+  printf ("PATTERN 1:\n");
+  for (int i = 1; i <= n; i++)
+	{
+	  for (int j = 1; j <= n; j++)
+		{
+		  printf ("%d ", i);
+		}
+	  printf ("\n");
+	}
+}
+
+void
+pattern_2 (int n)
+{
+  printf ("PATTERN 2:\n");
+  for (int i = 1; i <= n; i++)
+	{
+	  for (int j = 1; j <= i; j++)
+		{
+		  printf ("%d ", i);
+		}
+	  printf ("\n");
+	}
+}
+
+void
+pattern_3 (int n)
+{
+  printf ("PATTERN 3:\n");
+  for (int i = 1; i <= n; i++)
+	{
+	  for (int j = 1; j <= i; j++)
+		{
+		  printf ("%d ", j);
+		}
+	  printf ("\n");
+	}
+}
+
+void
+pattern_4 (int n)
+{
+  printf ("PATTERN 4:\n");
+  for (int i = 1; i <= n; i++)
+	{
+	  char c = 97;
+	  for (int j = 1; j <= i; j++)
+		{
+		  printf ("%c ", c++);
+		}
+	  printf ("\n");
+	}
+}
+
+void
+pattern_5 (int n)
+{
+  printf ("PATTERN 5:\n");
+  for (int i = 1; i <= n; i++)
+	{
+	  char c = 65;
+	  for (int j = 1; j <= i; j++)
+		{
+		  printf ("%c ", c++);
+		}
+	  printf ("\n");
+	}
+}
+
+void
+pattern_6 (int n)
+{
+  printf ("PATTERN 6:\n");
+  for (int i = 1; i < n; i++)
+	{
+	  for (int j = 1; j <= n - i; j++)
+		{
+		  printf ("%d ", i);
+		}
+	  printf ("\n");
+	}
+}
+
+void
+pattern_7 (int n)
+{
+  printf ("PATTERN 7:\n");
+  for(int i=1; i<=n;i++)
+  {
+      for(int j=1; j<=i; j++)
+      {
+          printf("%d ",i);
+      }
+      printf("\n");
+  }
+ for(int i=((n*2)/2)+1; i<n*2; i++)
+  {
+      for(int j=1; j<=(2*n)-i; j++)
+      {
+          printf("%d ",i);
+      }
+      printf("\n");
+  }
+}
+void
+pattern_8 (int n)
+{
+  printf ("PATTERN 8:\n");
+  for(int i=1; i<=n;i++)
+  {
+      for(int j=1; j<=i; j++)
+      {
+          printf("* ");
+      }
+      printf("\n");
+  }
+ for(int i=((n*2)/2)+1; i<n*2; i++)
+  {
+      for(int j=1; j<=(2*n)-i; j++)
+      {
+          printf("* ");
+      }
+      printf("\n");
+  }
+}
+void
+pattern_9 (int n)
+{
+  printf ("PATTERN 9:\n");
+  for(int i=1; i<=n; i++)
+  {           
+      for(int j=1; j<=n-i; j++)
+          printf(" ");
+      for(int j=1; j<=i; j++)
+            printf("* "); 
+      printf("\n");
+  }
+  for(int i=n+1; i<=2*n-1; i++)
+  {
+      for(int j=1; j<=i-n; j++)
+            printf(" ");
+      for(int j=1; j<=2*n-i; j++)
+            printf("* ");
+      printf("\n");
+  }
+}
+
+int
+main ()
+{
+  int n;
+  printf ("Enter value of n: ");
+  scanf ("%d", &n);
+  pattern_1 (n);
+  pattern_2 (n);
+  pattern_3 (n);
+  pattern_4 (n);
+  pattern_5 (n);
+  pattern_6 (n);
+  pattern_7 (n);
+  pattern_8 (n);
+  pattern_9 (n);
+  return 0;
+}
+/*  n=4, i=2*n -1 ,if i<=n -> j<=i ; else -> j<= (2*n)-i
+ j= 1 2 3 4
+i
+1   ___*      space=3 4-1 n-i
+2   __* *     scape=2 4-2 n-i
+3   _* * *    space=1 2-3 n-i
+4   * * * *   space=0 4-4 n-i
+5   _* * *    space=1 5-4 i-n
+6   __* *     space=2 6-4 i-n
+7   ___*      space=3 7-4 i-n
+spaces in each line= n-j times
+*/
+
