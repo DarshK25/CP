@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    int num, remainder, revno=0;
+    scanf("%d",&num);
+    do{
+    remainder=num%10;
+    revno=(revno*10)+remainder;
+    num=num/10;    
+    }while(num!=0);
+    printf("%d",revno);
+    return 0;
+}
